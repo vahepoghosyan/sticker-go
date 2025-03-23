@@ -23,7 +23,6 @@ func SetupRoutes() *gin.Engine {
         api.DELETE("/users/:id", controllers.DeleteUser)
         
         protected := api.Group("/")
-        
         // protected.
 		protected.Use(middleware.AuthMiddleware()) // Protect these routes
         protected.PUT("/profile", controllers.UpdateUserNotes)
